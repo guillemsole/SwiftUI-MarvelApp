@@ -7,57 +7,21 @@
 
 import Foundation
 
-protocol APIBuilder {
-    var urlRequest: URLRequest { get }
-    var baseUrl: URL { get }
-    var apiVersion: String { get }
-    var path: String { get }
-    func authParams(publicKey: String, privateKey: String, timestamp: String) -> [String: String]
+struct MarvelAPI {
+    static let publicKey = "a461a1c77ed0b74733071e8d794f429d"
+    static let privateKey = "ad6d68b70aa23baef666b4c34c8a4478c2fb2c31"
+    static let scheme = "https"
+    static let host = "gateway.marvel.com"
+    static let version = "/v1/public"
 }
 
-enum MarvelAPI {
+enum MarvelEndpoint {
     case characters
-}
-
-extension MarvelAPI : APIBuilder {
-    var urlRequest: URLRequest {
-        let url = self.baseUrl.appendingPathComponent(self.apiVersion + self.path)
-        var components = URLComponents(string: url.absoluteString)!
-        let timestamp = "\(Date().timeIntervalSince1970)"
-        let authParams = self.authParams(publicKey: publicKey, privateKey: privateKey, timestamp: timestamp)
-        components.queryItems = authParams.map { key, value in URLQueryItem(name: key, value: value)}
-        return URLRequest(url: components.url!)
-    }
-    
-    var baseUrl: URL {
-        return URL(string: "https://gateway.marvel.com")!
-    }
-    
-    var apiVersion: String {
-        "/v1/public"
-    }
     
     var path: String {
         switch self {
         case .characters:
-                return "/characters"
+            return "/characters"
         }
-    }
-    
-    private var privateKey: String {
-       "privateKey"
-    }
-    
-    private var publicKey: String {
-        "publicKey"
-    }
-    
-    func authParams(publicKey: String, privateKey: String, timestamp: String) -> [String: String] {
-        let rawHash = timestamp + publicKey + privateKey
-        return [
-            "ts": timestamp,
-            "apikey": publicKey,
-            "hash": rawHash.MD5
-        ]
     }
 }
