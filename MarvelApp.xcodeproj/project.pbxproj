@@ -13,6 +13,10 @@
 		63E6FD3F25F275A30057756B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E6FD3E25F275A30057756B /* Preview Assets.xcassets */; };
 		63E6FD4A25F275A40057756B /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD4925F275A40057756B /* MarvelAppTests.swift */; };
 		63E6FD5525F275A40057756B /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD5425F275A40057756B /* MarvelAppUITests.swift */; };
+		63E6FD6A25F275C80057756B /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD6925F275C80057756B /* String+Hash.swift */; };
+		63E6FD7225F276860057756B /* String+HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD7125F276860057756B /* String+HashTests.swift */; };
+		63E6FD7A25F277D70057756B /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD7925F277D70057756B /* MarvelAPI.swift */; };
+		63E6FD7F25F27A8E0057756B /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6FD7E25F27A8E0057756B /* MarvelAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		63E6FD5025F275A40057756B /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E6FD5425F275A40057756B /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		63E6FD5625F275A40057756B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E6FD6925F275C80057756B /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		63E6FD7125F276860057756B /* String+HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HashTests.swift"; sourceTree = "<group>"; };
+		63E6FD7925F277D70057756B /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
+		63E6FD7E25F27A8E0057756B /* MarvelAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		63E6FD3625F2759F0057756B /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				63E6FD6525F275AB0057756B /* Server */,
 				63E6FD3725F2759F0057756B /* MarvelAppApp.swift */,
 				63E6FD3925F275A00057756B /* ContentView.swift */,
 				63E6FD3B25F275A30057756B /* Assets.xcassets */,
@@ -116,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				63E6FD4925F275A40057756B /* MarvelAppTests.swift */,
+				63E6FD7E25F27A8E0057756B /* MarvelAPITests.swift */,
+				63E6FD7125F276860057756B /* String+HashTests.swift */,
 				63E6FD4B25F275A40057756B /* Info.plist */,
 			);
 			path = MarvelAppTests;
@@ -128,6 +139,15 @@
 				63E6FD5625F275A40057756B /* Info.plist */,
 			);
 			path = MarvelAppUITests;
+			sourceTree = "<group>";
+		};
+		63E6FD6525F275AB0057756B /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				63E6FD6925F275C80057756B /* String+Hash.swift */,
+				63E6FD7925F277D70057756B /* MarvelAPI.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E6FD3A25F275A00057756B /* ContentView.swift in Sources */,
+				63E6FD6A25F275C80057756B /* String+Hash.swift in Sources */,
 				63E6FD3825F2759F0057756B /* MarvelAppApp.swift in Sources */,
+				63E6FD7A25F277D70057756B /* MarvelAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E6FD7F25F27A8E0057756B /* MarvelAPITests.swift in Sources */,
+				63E6FD7225F276860057756B /* String+HashTests.swift in Sources */,
 				63E6FD4A25F275A40057756B /* MarvelAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

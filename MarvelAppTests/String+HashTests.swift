@@ -6,27 +6,25 @@
 //
 
 import XCTest
+@testable import MarvelApp
 
 class String_HashTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_md5_short_text_success() {
+        let rawText = "1abcd1234"
+        let md5Text = rawText.MD5
+        XCTAssertTrue(md5Text == "ffd275c5130566a2916217b101f26150")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_md5_long_text_success() {
+        let rawText = "12345678910abcdefghijklmopqrstuwxyz"
+        let md5Text = rawText.MD5
+        XCTAssertTrue(md5Text == "773ec7c9a0af0f485ab5bbd4a34abc2a")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_md5_text_success() {
+        let rawText = "1abcd1234"
+        let md5Text = rawText.MD5
+        XCTAssertTrue(md5Text != rawText)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
