@@ -1,0 +1,13 @@
+sourceryCommand: null
+sourceryTemplate: null
+MarvelAppTests:
+  sources:
+    include:
+    - ./MarvelApp
+  output: ./MarvelAppTests/Mock.generated.swift
+  targets:
+  - MarvelAppTests
+  testable:
+  - MarvelApp
+  import:
+  - Foundation
